@@ -15,4 +15,6 @@ const ChildComponent = memo(({ user: { name, age } }) => {
     return (
         <div>user name: {name}, user age: {age}</div>
     )
+}, (prevProps, nextProps) => {
+    return prevProps.user.name === nextProps.user.name || prevProps.user.age === nextProps.user.age;
 });
